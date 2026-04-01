@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>QUACHI</title>
+<style>
+  body {
+    font-family: Arial;
+    text-align: center;
+    margin-top: 80px;
+  }
+  input {
+    padding: 8px;
+    font-size: 16px;
+    width: 120px;
+  }
+  button {
+    padding: 8px 12px;
+    font-size: 16px;
+    margin: 5px;
+  }
+  .box {
+    margin: 20px;
+  }
+  a {
+    display: block;
+    margin-top: 30px;
+  }
+</style>
+</head>
+<body>
+
+<h1>QUACHI</h1>
+<p>1 Gwachi = 20 cm</p>
+
+<!-- cm → Gwachi -->
+<div class="box">
+  <input type="number" id="cm" placeholder="cm">
+  <button onclick="cmToGwachi()">→ Gwachi</button>
+  <p id="result1"></p>
+</div>
+
+<!-- Gwachi → cm -->
+<div class="box">
+  <input type="number" id="gwachi" placeholder="Gwachi">
+  <button onclick="gwachiToCm()">→ cm</button>
+  <p id="result2"></p>
+</div>
+
+<!-- Git 링크 -->
+<a href="https://github.com/soul047/QUACHI" target="_blank">
+  GitHub 보기
+</a>
+
+<script>
+function cmToGwachi() {
+  var cm = document.getElementById("cm").value;
+  var gwachi = cm / 20;
+  document.getElementById("result1").innerText =
+    cm + " cm = " + gwachi + " Gwachi";
+}
+
+function gwachiToCm() {
+  var gwachi = document.getElementById("gwachi").value;
+  var cm = gwachi * 20;
+  document.getElementById("result2").innerText =
+    gwachi + " Gwachi = " + cm + " cm";
+}
+</script>
+
+</body>
+</html>
