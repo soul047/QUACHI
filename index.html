@@ -9,19 +9,39 @@
     text-align: center;
     margin-top: 80px;
   }
-  input {
-    padding: 8px;
-    font-size: 16px;
-    width: 120px;
-  }
-  button {
-    padding: 8px 12px;
-    font-size: 16px;
-    margin: 5px;
-  }
+
   .box {
-    margin: 20px;
+    margin: 20px auto;
+    width: 300px;
   }
+
+  .row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  input, button {
+    height: 40px;
+    font-size: 16px;
+  }
+
+  input {
+    width: 150px;
+    padding: 5px;
+  }
+
+  button {
+    width: 100px;
+    cursor: pointer;
+  }
+
+  .result {
+    margin-top: 10px;
+    height: 24px; /* 결과칸 높이 고정 */
+    font-weight: bold;
+  }
+
   a {
     display: block;
     margin-top: 30px;
@@ -30,24 +50,27 @@
 </head>
 <body>
 
-<h1>QUACHI</h1>
-<p>1 Gwachi = 20 cm</p>
+<h1>민후의 길이단위: 과치 Qwachi</h1>
+<p>1 과치 = 20 cm</p>
 
-<!-- cm → Gwachi -->
+<!-- cm → 과치 -->
 <div class="box">
-  <input type="number" id="cm" placeholder="cm">
-  <button onclick="cmToGwachi()">→ 과치</button>
-  <p id="result1"></p>
+  <div class="row">
+    <input type="number" id="cm" placeholder="cm">
+    <button onclick="cmToGwachi()">→ 과치</button>
+  </div>
+  <div class="result" id="result1"></div>
 </div>
 
-<!-- Gwachi → cm -->
+<!-- 과치 → cm -->
 <div class="box">
-  <input type="number" id="gwachi" placeholder="Gwachi">
-  <button onclick="gwachiToCm()">→ cm</button>
-  <p id="result2"></p>
+  <div class="row">
+    <input type="number" id="gwachi" placeholder="과치">
+    <button onclick="gwachiToCm()">→ cm</button>
+  </div>
+  <div class="result" id="result2"></div>
 </div>
 
-<!-- Git 링크 -->
 <a href="https://github.com/soul047/QUACHI" target="_blank">
   이민후 GitHub 보기
 </a>
@@ -57,14 +80,14 @@ function cmToGwachi() {
   var cm = document.getElementById("cm").value;
   var gwachi = cm / 20;
   document.getElementById("result1").innerText =
-    cm + " cm = " + gwachi + " Gwachi";
+    cm + " cm = " + gwachi + " 과치";
 }
 
 function gwachiToCm() {
   var gwachi = document.getElementById("gwachi").value;
   var cm = gwachi * 20;
   document.getElementById("result2").innerText =
-    gwachi + " Gwachi = " + cm + " cm";
+    gwachi + " 과치 = " + cm + " cm";
 }
 </script>
 
