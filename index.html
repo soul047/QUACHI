@@ -11,46 +11,43 @@
   }
 
   .box {
-    margin: 20px auto;
-    width: 300px;
+    margin: 30px auto;
+    width: 320px; /* 전체 고정 */
   }
 
   .row {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 10px;
   }
 
   input, button {
-    height: 40px;
+    height: 45px;           /* 완전 동일 */
     font-size: 16px;
+    box-sizing: border-box; /* 중요 */
   }
 
   input {
-    width: 150px;
-    padding: 5px;
+    width: 200px;
+    padding: 0 10px;
   }
 
   button {
-    width: 100px;
+    width: 110px;
     cursor: pointer;
   }
 
   .result {
     margin-top: 10px;
-    height: 24px; /* 결과칸 높이 고정 */
+    height: 25px; /* 결과칸도 고정 */
     font-weight: bold;
-  }
-
-  a {
-    display: block;
-    margin-top: 30px;
   }
 </style>
 </head>
 <body>
 
-<h1>민후의 길이단위: 과치 Qwachi</h1>
+<h1>내 길이단위: 과치 Qwachi</h1>
 <p>1 과치 = 20 cm</p>
 
 <!-- cm → 과치 -->
